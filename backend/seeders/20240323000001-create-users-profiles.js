@@ -81,6 +81,17 @@ module.exports = {
     // Insert users
     await queryInterface.bulkInsert('users', users);
 
+    // Make Jane a Partner (org staff) by assigning to an approved org and flipping flags
+    await queryInterface.sequelize.query(`
+      UPDATE users
+      SET org_id = (
+            SELECT org_id FROM organizations WHERE is_approved = 1 LIMIT 1
+          ),
+          is_org_user = 1,
+          is_user = 0
+      WHERE user_email = 'jane.smith@example.com'
+    `);
+
     // Create profiles for each user
     const profiles = [
       {

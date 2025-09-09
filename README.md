@@ -11,7 +11,6 @@ You made it to the performance task! This is where we get to see you in action, 
 
 **Timebox:** Expect 4–6 hours of focused work.  
 **Submission window:** Please submit within 48–72 hours of receiving the assignment (see Submission section below).
-
 ---
 
 ## 🧭 Purpose & Scope (Read Me First)
@@ -107,6 +106,9 @@ git clone https://github.com/The-Knowledge-House/digital-pipeline-local.git
 - Starts the backend (`http://localhost:5001`) 
 - Starts the frontend (`http://localhost:5173`)
 
+
+‼️**NOTE: The repo takes a while to start when running `./start-local.sh`. Keep the frontend (`http://localhost:5173`) tab open in your browser after you run the start-local script, refresh it after a 1-2 minutes.**‼️
+
 ### Security & Safe Defaults
 - `backend/.env.example` sets `SAFE_MODE=true` to disable external integrations.
 - Email and file storage use mock providers by default (`EMAIL_PROVIDER=mock`, `STORAGE_PROVIDER=mock`).
@@ -125,7 +127,7 @@ Test with these pre-configured users:
 | Role | Email | Password |
 |------|-------|----------|
 | **Member** | `john.doe@example.com` | `password123` |
-| **Member** | `jane.smith@example.com` | `password123` |
+| **Partner** | `jane.smith@example.com` | `password123` |
 | **Admin** | `admin@example.com` | `admin123` |
 
 ### 💾 Data & Seeding
