@@ -1,0 +1,18 @@
+import axios from "axios";
+
+export async function deleteOrgStaff({ user_id, org_id }) {
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+  const apiDomain = import.meta.env.VITE_BXDP_DEV_SERVER;
+  const results = axios({
+    config,
+    method: "DELETE",
+    url: `${apiDomain}/orgs/${org_id}/deleteUser/${user_id}/delete`,
+  }).then((res) => {
+    return res.data;
+  });
+  return results;
+}

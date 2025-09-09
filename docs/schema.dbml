@@ -1,0 +1,330 @@
+// BXDP schema (derived from Sequelize models)
+// DBML: copy/paste into dbdiagram.io to get a visual.
+
+Table users {
+  user_id uuid [pk]
+  org_id uuid [ref: > organizations.org_id]
+  first_name varchar
+  last_name varchar
+  user_email varchar [unique]
+  password varchar
+  profile_url varchar
+  profile_img varchar
+  password_reset_required boolean
+  mou boolean
+  is_approved boolean
+  is_active boolean
+  is_logged_in boolean
+  is_meta_admin boolean
+  is_bxdp_admin boolean
+  is_org_admin boolean
+  is_org_manager boolean
+  is_org_user boolean
+  is_user boolean
+  was_invited boolean
+  email_cofirmed boolean
+  profile_cofirmed boolean
+  settings_confirmed boolean
+  invite_token varchar
+  is_token_used boolean
+}
+
+Table organizations {
+  org_id uuid [pk]
+  user_id uuid
+  name varchar
+  description varchar
+  website varchar
+  phone int
+  address varchar
+  zipcode int
+  info_email varchar
+  mou boolean
+  logo_url varchar
+  banner_url varchar
+  digital_services boolean
+  is_featured boolean
+  is_approved boolean
+  is_rejected boolean
+  is_active boolean
+  hidden boolean
+  was_invited boolean
+  invite_token varchar
+  is_token_used boolean
+}
+
+Table profiles {
+  profile_id uuid [pk]
+  user_id uuid [ref: > users.user_id]
+  past_experience boolean
+  portfolio varchar
+  education_level varchar
+  college_in_stem boolean
+  income_level varchar
+  date_of_birth date
+  gender varchar
+  address varchar
+  zipcode int
+  experience_Level varchar
+  availability varchar
+  learning_style varchar
+  preferred_language varchar
+  LinkedIn varchar
+  employment_status boolean
+}
+
+Table programs {
+  program_id uuid [pk]
+  org_id uuid [ref: > organizations.org_id]
+  name varchar
+  description varchar
+  banner_url varchar
+  requirements varchar
+  enrollment_deadline date
+  start_date date
+  end_date date
+  start_time time
+  end_time time
+  week_days text // array serialized in sqlite
+  location varchar
+  video_call_link varchar
+  is_virtual boolean
+  is_featured boolean
+  is_approved boolean
+  is_rejected boolean
+  is_active boolean
+}
+
+Table events {
+  event_id uuid [pk]
+  org_id uuid [ref: > organizations.org_id]
+  name varchar
+  description varchar
+  banner_url varchar
+  location varchar
+  rsvp_link varchar
+  is_virtual boolean
+  is_featured boolean
+  is_approved boolean
+  is_rejected boolean
+  is_active boolean
+}
+
+Table event_days {
+  // implicit id may exist; sequelize will add one if not disabled
+  event_id uuid [ref: > events.event_id]
+  date date
+  start_time time
+  end_time time
+}
+
+Table skills {
+  skill_id uuid [pk]
+  name varchar [unique]
+  icon_url varchar
+  default_value varchar
+}
+
+Table tags {
+  tag_id uuid [pk]
+  name varchar [unique]
+}
+
+Table categories {
+  category_id uuid [pk]
+  title varchar [unique]
+}
+
+Table resources {
+  resource_id uuid [pk]
+  title varchar
+  description varchar
+  location varchar
+  link varchar
+  photo varchar
+  provider varchar
+  is_platform_wide boolean
+  is_active boolean
+}
+
+Table images {
+  image_id uuid [pk]
+  org_id uuid [ref: > organizations.org_id]
+  program_id uuid [ref: > programs.program_id]
+  event_id uuid [ref: > events.event_id]
+  skill_id uuid [ref: > skills.skill_id]
+  name varchar
+  description text
+  url varchar
+  type varchar
+  expiresAt date
+}
+
+Table videos {
+  video_id uuid [pk]
+  org_id uuid [ref: > organizations.org_id]
+  name varchar
+  description varchar
+  link varchar
+  image_url varchar
+}
+
+Table roles {
+  role_id uuid [pk]
+  name varchar [unique]
+}
+
+Table interests {
+  interest_id uuid [pk]
+  type varchar [unique]
+  name varchar [unique]
+}
+
+Table careers {
+  career_id uuid [pk]
+  name varchar [unique]
+}
+
+Table requirements {
+  requirements_id uuid [pk]
+  past_experience boolean
+  education_level varchar
+  max_income_level int
+  min_income int
+  max_age int
+  min_age int
+  gender varchar
+  experience_Level varchar
+  city varchar
+  zipcode int
+  radius varchar
+}
+
+Table cases {
+  case_id uuid [pk]
+  user_id uuid
+  reason varchar
+}
+
+Table reset_password_tokens {
+  reset_id uuid [pk]
+  user_id uuid [ref: > users.user_id]
+  reset_first_name varchar
+  reset_last_name varchar
+  reset_email varchar
+  reset_token varchar
+  is_token_used boolean
+}
+
+Table invite_tokens {
+  invite_id uuid [pk]
+  user_id uuid [ref: > users.user_id]
+  invite_first_name varchar
+  invite_last_name varchar
+  invite_email varchar
+  invite_token varchar
+  is_token_used boolean
+}
+
+Table change_password_tokens {
+  change_id uuid [pk]
+  user_id uuid [ref: > users.user_id]
+  change_first_name varchar
+  change_last_name varchar
+  change_email varchar
+  change_token varchar
+  is_token_used boolean
+}
+
+// Join tables
+Table rsvps {
+  event_id uuid [ref: > events.event_id]
+  user_id uuid [ref: > users.user_id]
+}
+
+Table applicants {
+  program_id uuid [ref: > programs.program_id]
+  user_id uuid [ref: > users.user_id]
+}
+
+Table topics {
+  program_id uuid [ref: > programs.program_id]
+  skill_id uuid [ref: > skills.skill_id]
+  description varchar
+}
+
+Table tag_event {
+  event_id uuid [ref: > events.event_id]
+  tag_id uuid [ref: > tags.tag_id]
+}
+
+Table profile_skill {
+  profile_id uuid [ref: > profiles.profile_id]
+  skill_id uuid [ref: > skills.skill_id]
+}
+
+Table profile_role {
+  profile_id uuid [ref: > profiles.profile_id]
+  role_id uuid [ref: > roles.role_id]
+}
+
+Table profile_interest {
+  profile_id uuid [ref: > profiles.profile_id]
+  interest_id uuid [ref: > interests.interest_id]
+}
+
+Table profile_tag {
+  profile_id uuid [ref: > profiles.profile_id]
+  tag_id uuid [ref: > tags.tag_id]
+}
+
+Table tag_resource {
+  tag_id uuid [ref: > tags.tag_id]
+  resource_id uuid [ref: > resources.resource_id]
+}
+
+Table category_resource {
+  category_id uuid [ref: > categories.category_id]
+  resource_id uuid [ref: > resources.resource_id]
+}
+
+Table org_resource {
+  org_id uuid [ref: > organizations.org_id]
+  resource_id uuid [ref: > resources.resource_id]
+}
+
+Table user_resource {
+  user_id uuid [ref: > users.user_id]
+  resource_id uuid [ref: > resources.resource_id]
+}
+
+Table event_requirements {
+  event_id uuid [ref: > events.event_id]
+  requirements_id uuid [ref: > requirements.requirements_id]
+}
+
+Table program_requirements {
+  program_id uuid [ref: > programs.program_id]
+  requirements_id uuid [ref: > requirements.requirements_id]
+}
+
+Table e_case {
+  event_id uuid [ref: > events.event_id]
+  case_id uuid [ref: > cases.case_id]
+}
+
+Table p_case {
+  program_id uuid [ref: > programs.program_id]
+  case_id uuid [ref: > cases.case_id]
+}
+
+Table o_case {
+  org_id uuid [ref: > organizations.org_id]
+  case_id uuid [ref: > cases.case_id]
+}
+
+Table video_tag {
+  video_id uuid [ref: > videos.video_id]
+  tag_id uuid [ref: > tags.tag_id]
+}
+
