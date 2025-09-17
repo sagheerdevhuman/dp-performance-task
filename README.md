@@ -167,7 +167,7 @@ Document what you used in your notes!
 
 #### More Support
 If you hit repo access issues or technical blockers:
-- **Email:** careers@theknowledgehouse.org
+- **Email:** jbenisrael@theknowledgehouse.org
 - **Subject Line:** "Performance Task Submission Issue"
 - **Response time:** We monitor this throughout the weekend
 
