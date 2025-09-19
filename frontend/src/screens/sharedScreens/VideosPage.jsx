@@ -138,7 +138,7 @@ function VideosPage() {
       />
       <VideoSearch videos={isSearchSubmitted ? filteredVideos : videosList}/>
       
-      <Footer />
+      {/* <Footer /> the footer has to be added in global main layout  */}
     </div>
   );
 }

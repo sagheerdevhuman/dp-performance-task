@@ -67,7 +67,7 @@ export default function ResetPasswordPage() {
 
   return (
     <div className="flex flex-col justify-between h-screen">
-      <Navbar />
+      {/* <Navbar /> the Navbar has to be added in global main layout  */}
 
       <div className="flex flex-col justify-center items-center h-2/3 border-2 border-black">
         <form
@@ -125,7 +125,7 @@ export default function ResetPasswordPage() {
         </form>
       </div>
 
-      <Footer />
+      {/* <Footer /> the footer has to be added in global main layout  */}
     </div>
   );
 }

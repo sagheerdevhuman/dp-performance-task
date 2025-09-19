@@ -32,7 +32,7 @@ function ApprovalPage() {
     editOrgAdmin();
     return (
       <div className="flex flex-col justify-between m-h-screen h-screen max-w-screen min-w-screen">
-        <Navbar />
+        {/* <Navbar /> the Navbar has to be added in global main layout  */}
         <div className="flex flex-col justify-center items-center">
           <p>You can now login below</p>
           <button
@@ -42,17 +42,17 @@ function ApprovalPage() {
             Login
           </button>
         </div>
-        <Footer />
+        {/* <Footer /> the footer has to be added in global main layout  */}
       </div>
     );
   } else {
     return (
       <div className="flex flex-col justify-between m-h-screen h-screen max-w-screen min-w-screen">
-        <Navbar />
+        {/* <Navbar /> the Navbar has to be added in global main layout  */}
         <main className="flex flex-col justify-center items-center h-full">
           <h1 className="text-5xl font-semibold">Approval still pending</h1>
         </main>
-        <Footer />
+        {/* <Footer /> the footer has to be added in global main layout  */}
       </div>
     );
   }

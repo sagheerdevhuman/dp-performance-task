@@ -65,7 +65,7 @@ export default function ReremovPasswordPage() {
 
   return (
     <div className="flex flex-col justify-between h-screen w-screen">
-      <Navbar />
+      {/* <Navbar /> the Navbar has to be added in global main layout  */}
 
       <div className="flex flex-col justify-center items-center min-h-[60vh] ">
         <form
@@ -132,7 +132,7 @@ export default function ReremovPasswordPage() {
         </form>
       </div>
 
-      <Footer />
+      {/* <Footer /> the footer has to be added in global main layout  */}
     </div>
   );
 }

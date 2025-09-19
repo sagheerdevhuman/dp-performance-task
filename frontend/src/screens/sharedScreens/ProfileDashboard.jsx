@@ -422,7 +422,7 @@ function ProfileDashboard() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      <Navbar />
+     {/* <Navbar /> the Navbar has to be added in global main layout  */}
       <div className="flex flex-row  ">
         <div className="flex flex-col items-center justify-center h-full w-2/5 pt-20">
          <div className="flex flex-col items-center  h-screen w-[320px] border-r-[1px] border-[#E2E5F1]">
@@ -671,7 +671,7 @@ function ProfileDashboard() {
           </>
         </div>
       </div>
-      <Footer />
+       {/* <Footer /> the footer has to be added in global main layout  */} 
     </div>
   );
 }

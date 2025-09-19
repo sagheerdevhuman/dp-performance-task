@@ -155,7 +155,7 @@ function NewProfile() {
 
     return (
     <div className="flex flex-col justify-between m-h-screen h-screen w-screen">
-      <Navbar />
+      {/* <Navbar /> the Navbar has to be added in global main layout  */}
       <div className="flex flex-row ">
         <div className="h-full flex-col w-full lg:w-1/2 h-[85vh] p-8">
           <ProfileForm 
@@ -178,7 +178,7 @@ function NewProfile() {
         </div>
       </div>
       
-      <Footer />
+      {/* <Footer /> the footer has to be added in global main layout  */}
     </div>
   );
   

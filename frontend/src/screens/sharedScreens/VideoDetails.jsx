@@ -90,7 +90,7 @@ function VideoDetails() {
           <VideoDetailHeader video={video} setVideo={setVideo} />
         {/*<OrgPrev org={program.organization}/> 
         <MorePrograms data={program} />*/}
-        <Footer />
+        {/* <Footer /> the footer has to be added in global main layout  */}
       </div>
     );
   }
@@ -118,7 +118,7 @@ function VideoDetails() {
            <VideoDetailHeader video={video} setVideo={setVideo} />
         {/*<OrgPrev org={program.organization}/> 
         <MorePrograms data={program} />*/}
-        <Footer />
+        {/* <Footer /> the footer has to be added in global main layout  */}
       </div>
     );
   }
@@ -141,7 +141,7 @@ function VideoDetails() {
           <VideoDetailHeader video={video} setVideo={setVideo} />
         {/*<OrgPrev org={video.organization}/> 
         <MorePrograms data={video} />*/}
-        <Footer />
+        {/* <Footer /> the footer has to be added in global main layout  */}
       </div>
     );
   }

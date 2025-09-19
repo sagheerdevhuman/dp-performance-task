@@ -48,7 +48,7 @@ export const Hero = ({title,text,img,page,page2,btn_text,btn_text2,backgraound,l
 
 
     <div className="flex flex-col h-[80vh] ">
-      <Navbar />
+     {/* <Navbar /> the Navbar has to be added in global main layout  */} 
         <div className={backgraound} >
           <div className=" h-full bg-gradient-to-r from-tkh-bg-0/[.55] to-tkh-bg-0/[.75]">
             <div ref={ref} className="flex flex-col justify-center items-center h-full text-center text-tkh-grayscale-0"> 

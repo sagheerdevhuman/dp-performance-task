@@ -326,12 +326,12 @@ const Navbar = ({}) => {
 
   // Add Videos and Resources to the main navigation (desktop)
   const mainNavLinks = [
-    { name: "Home", href: "/" },
-    { name: "Programs", href: "/programs" },
-    { name: "Events", href: "/events" },
-    { name: "Videos", href: "/videos" },
-    { name: "Resources", href: "/resources" },
-    { name: "Partners", href: "/partners_page" },
+    { name: "Home", to: "/" },
+    { name: "Programs", to: "/programs" },
+    { name: "Events", to: "/events" },
+    { name: "Videos", to: "/videos" },
+    { name: "Resources", to: "/resources" },
+    { name: "Partners", to: "/partners_page" },
   ];
 
 
@@ -340,14 +340,10 @@ const Navbar = ({}) => {
       <UserBanner/>
       <Popover >
         <div className="flex h-[76px] justify-between items-center mx-auto px-4 py-2 sm:px-6 lg:justify-start md:space-x-10 md:px-6 lg:px-10 xl:px-20 2xl:px-20 ">
-          
-            <NavLink name="Home" to="/" 
-              
-            >
-              <span className="sr-only text-tkh-purple-5">DP</span>
-             <img className="max-h-[55px]" src="https://d1yh21d3dzz97r.cloudfront.net/DP%20Digital%20Pipeline%20-%20_Powered%20by%20the%20Knowledge%20House_.png" />
-            </NavLink>
-          
+          <NavLink name="Home" to="/">
+            <span className="sr-only text-tkh-purple-5">DP</span>
+            <img className="max-h-[55px]" src="https://d1yh21d3dzz97r.cloudfront.net/DP%20Digital%20Pipeline%20-%20_Powered%20by%20the%20Knowledge%20House_.png" />
+          </NavLink>
           <div className="-mr-2 -my-1 lg:hidden">
             <Popover.Button className="bg-tkh-brand-tangerine-4 rounded-md p-2 inline-flex items-center justify-center text-tkh-grayscale-0 hover:text-gray-500 hover:bg-gray-100 focus:outline-none">
               <span className="sr-only">Open menu</span>
@@ -356,17 +352,17 @@ const Navbar = ({}) => {
           </div>
           <Popover.Group as="nav" className="hidden lg:flex space-x-8">
             {mainNavLinks.map((link) => (
-              <a
+              <NavLink
                 key={link.name}
-                href={link.href}
+                to={link.to}
                 className={
-                  currentPath === link.href
+                  currentPath === link.to
                     ? "text-tkh-brand-tangerine-5 font-bold"
                     : "text-tkh-grayscale-7 hover:text-tkh-brand-tangerine-5 font-semibold"
                 }
               >
                 {link.name}
-              </a>
+              </NavLink>
             ))}
           </Popover.Group>
           {renderLoggedInNav()}

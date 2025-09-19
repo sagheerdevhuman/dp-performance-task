@@ -315,7 +315,7 @@ function CreateProgram() {
 
   return (
     <div className="flex flex-col justify-between min-h-screen w-screen">
-      <Navbar />
+      {/* <Navbar /> the Navbar has to be added in global main layout  */}
        <AddSkillModal
           skillFormData={skillFormData}
           handleSkillFormRendering={handleSkillFormRendering}

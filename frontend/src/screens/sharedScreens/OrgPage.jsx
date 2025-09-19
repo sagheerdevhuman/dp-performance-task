@@ -216,7 +216,7 @@ console.log("activePrograms",activePrograms)
       {videos?.length>0 && <OrgVideos data={videos} />}
       {activeEvents?.length>0 && <UpcommingEvents data={activeEvents} />}
       {activePrograms?.length==0  && <div className=" h-[130px] w-full bg-[#fff]"/>}
-      <Footer />
+      {/* <Footer /> the footer has to be added in global main layout  */}
     </div>
     );
   }
@@ -245,7 +245,7 @@ if( org && (partner?.status == "success") && (isOrgAdmin=="true"||isOrgUser=="tr
       {activeEvents?.length>0 && <UpcommingEvents data={activeEvents} />}
 
 
-      <Footer />
+      {/* <Footer /> the footer has to be added in global main layout  */}
     </div>
     );
   }
@@ -273,7 +273,7 @@ if( org && (partner?.status == "success") && (isOrgAdmin=="true"||isOrgUser=="tr
         {activePrograms?.length==0  && <div className=" h-[160px] z-[-1] w-full bg-[#fff]"/>}
         {videos?.length>0 && <OrgVideos data={videos} />} 
         {activeEvents?.length>0 && <UpcommingEvents data={activeEvents} partner={org} />}
-        <Footer />
+        {/* <Footer /> the footer has to be added in global main layout  */}
       </div>
     );
   }

@@ -138,7 +138,7 @@ function ProgramsPage() {
       <ProgramSearch programs={ isSearchSubmitted ? filteredPrograms : qualifiedPrograms}/>
       {/* {isSearchSubmitted ? renderSearchResults() : null}*/}
       
-      <Footer />
+      {/* <Footer /> the footer has to be added in global main layout  */}
     </div>
   );
 }

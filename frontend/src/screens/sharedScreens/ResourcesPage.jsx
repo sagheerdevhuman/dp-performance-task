@@ -434,7 +434,7 @@ function ResourcesPage() {
       <ResourcesSearch resources={ isSearchSubmitted ? filteredResources : resourceList}/>
       {/* {isSearchSubmitted ? renderSearchResults() : null}*/}
       
-      <Footer />
+      {/* <Footer /> the footer has to be added in global main layout  */}
     </div>
   );
 }

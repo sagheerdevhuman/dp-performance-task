@@ -45,7 +45,7 @@ function ConfirmEmail() {
   if (!!encodedToken) {
     return (
       <div className="flex flex-col justify-between  max-w-screen min-w-screen">
-        <Navbar />
+        {/* <Navbar /> the Navbar has to be added in global main layout  */}
         <div className="flex flex-col justify-center items-center h-[70vh] ">
          
             <p className="text-[40px] font-[700] mb-[20px] text-tkh-grayscale-10 ">Click below to verify email</p>
@@ -75,13 +75,13 @@ function ConfirmEmail() {
             )}    
 
         </div>
-        <Footer />
+        {/* <Footer /> the footer has to be added in global main layout  */}
       </div>
     );
   } else {
     return (
       <div className="flex flex-col justify-between  max-w-screen min-w-screen">
-        <Navbar />
+        {/* <Navbar /> the Navbar has to be added in global main layout  */}
         <main className="flex flex-col justify-center items-center h-[70vh]">
           <div className="flex flex-col max-w-[500px] w-[80vw] p-[72px] drop-shadow-card rounded bg-tkh-grayscale-1">
             <h1 className="text-[40px] font-[700] mb-[16px] text-tkh-grayscale-10 mb-10">Welcome to Digital Pipline</h1>
@@ -96,7 +96,7 @@ function ConfirmEmail() {
             </div>
           </div>
         </main>
-        <Footer />
+        {/* <Footer /> the footer has to be added in global main layout  */}
       </div>
     );
   }

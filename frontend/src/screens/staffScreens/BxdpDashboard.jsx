@@ -818,7 +818,7 @@ function BxdpDashboard() {
   if (programsList?.status == "success" && eventsList?.status == "success" && orgList?.status == "success" && resourcesList?.status == "success" ) {
     return (
     <div className="flex flex-col justify-between min-h-screen w-screen">
-      <Navbar />
+      {/* <Navbar /> the Navbar has to be added in global main layout  */}
       <main className="flex flex-col justify-center gap-7 h-full mx-3 md:mx-7 lg:mx-10 xl:mx-16 py-10">
         <header className="flex flex-col justify-center text-center lg:text-start gap-[24px] mt-[20px]"> 
           <h1 className="text-5xl font-bold leading-tight ">
@@ -1030,7 +1030,7 @@ function BxdpDashboard() {
           isEditVideoModalRendered={isEditVideoModalRendered}
         />
       </main>
-      <Footer />
+      {/* <Footer /> the footer has to be added in global main layout  */}
     </div>
   );
   }

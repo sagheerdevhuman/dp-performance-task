@@ -362,7 +362,7 @@ function BxdpDashboard() {
   if (programsList?.status == "success" && eventsList?.status == "success") {
     return (
     <div className="flex flex-col justify-between min-h-screen w-screen">
-      <Navbar />
+      {/* <Navbar /> the Navbar has to be added in global main layout  */}
       <AddStaffModal
         firstName={invitedUserData.firstName}
         lastName={invitedUserData.lastName}
@@ -462,7 +462,7 @@ function BxdpDashboard() {
           setPrograms={setPrograms}
         />
       </main>
-      <Footer />
+      {/* <Footer /> the footer has to be added in global main layout  */}
     </div>
   );
   }

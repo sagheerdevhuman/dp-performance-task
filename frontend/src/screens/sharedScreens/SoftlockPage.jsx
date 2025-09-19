@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 function SoftlockPage() {
   return (
     <div className="flex flex-col justify-between min-h-screen h-screen">
-      <Navbar />
+      {/* <Navbar /> the Navbar has to be added in global main layout  */}
       <div className="flex flex-col lg:flex-row justify-center items-center gap-5 2xl:gap-20 my-10 lg:mx-24 xl:mx-28 2xl:mx-36">
         <div className="flex flex-col justify-center items-center gap-5 2xl:gap-10 w-full md:w-9/12 lg:w-5/12 xl:w-6/12 2xl:w-4/12">
           <h1 className="mx-3 text-center lg:text-left text-xl md:text-3xl tracking-tight font-bold leading-tight">
@@ -37,7 +37,7 @@ function SoftlockPage() {
           className="mt-5 w-4/5 sm:w-3/5 md:w-4/5 lg:w-5/12 xl:w-6/12 2xl:w-4/12 cursor-pointer"
         />
       </div>
-      <Footer />
+      {/* <Footer /> the footer has to be added in global main layout  */}
     </div>
   );
 }

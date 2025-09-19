@@ -157,7 +157,7 @@ function OrgSignUp() {
   return (
 
     <div className="flex flex-col justify-between min-h-screen w-screen">
-      <Navbar />
+      {/* <Navbar /> the Navbar has to be added in global main layout  */}
       <div className="flex flex-row ">
         <div className=" w-none flex flex-col justify-center items-center lg:w-2/5 const backgraound bg-center bg-no-repeat bg-cover bg-[url('https://d1yh21d3dzz97r.cloudfront.net/pexels-mikhail-nilov-9301297.jpg')]">
           <div className=" h-full w-full bg-gradient-to-r from-tkh-bg-1/[.55] to-tkh-bg-1/[.75]"/>

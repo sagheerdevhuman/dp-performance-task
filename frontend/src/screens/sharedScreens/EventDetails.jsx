@@ -183,7 +183,7 @@ function EventDetailPage() {
         />
           < OrgPrev org={event.organization}/> 
           <MoreEvents data={event}/>
-        <Footer />
+        {/* <Footer /> the footer has to be added in global main layout  */}
       </div>
     );
   }
@@ -215,7 +215,7 @@ function EventDetailPage() {
         />
           <OrgPrev org={event.organization}/>   
           <MoreEvents data={event}/>
-        <Footer />
+        {/* <Footer /> the footer has to be added in global main layout  */}
       </div>
     );
   }
@@ -249,7 +249,7 @@ function EventDetailPage() {
         <OrgPrev org={event.organization}/> 
         
         <MoreEvents data={event}/>
-        <Footer />
+        {/* <Footer /> the footer has to be added in global main layout  */}
       </div>
     );
   }

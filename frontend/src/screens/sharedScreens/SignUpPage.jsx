@@ -17,7 +17,7 @@ export default function SignUpPage() {
 
   return (
     <div className="flex flex-col justify-between m-h-screen h-screen">
-      <Navbar />
+      {/* <Navbar /> the Navbar has to be added in global main layout  */}
       <div className="flex flex-col p-8 flex-wrap lg:flex-row justify-center items-center my-10 text-center">
         <h1 className="lg:w-full text-4xl mb-8 xl:text-6xl font-semibold">
           Please Select A Sign Up Option
@@ -53,7 +53,7 @@ export default function SignUpPage() {
           </div>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> the footer has to be added in global main layout  */}
     </div>
   );
 }

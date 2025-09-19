@@ -50,7 +50,7 @@ function PartnersPage() {
       )}
       
 
-      <Footer />
+      {/* <Footer /> the footer has to be added in global main layout  */}
     </div>
   );
 }

@@ -13,7 +13,7 @@ export const Hero = ({title,backgraound,formData,handleSubmit,setFormData,admin}
   return (
       
     <div className="flex flex-col  md:max-h-[25vh] md:min-h-[500px]">
-      <Navbar />
+      {/* <Navbar /> the Navbar has to be added in global main layout  */}
 
         <ParallaxBanner style={{ aspectRatio: '2 / 1' }}>
           {preview == true &&(

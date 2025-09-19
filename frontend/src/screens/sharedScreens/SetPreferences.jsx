@@ -238,7 +238,7 @@ function SetPreferences() {
 
   return (
     <div className="flex flex-col justify-between m-h-screen h-screen w-screen">
-      <Navbar />
+      {/* <Navbar /> the Navbar has to be added in global main layout  */}
       <AddSkillModal
         skillFormData={skillFormData}
         handleSkillFormRendering={handleSkillFormRendering}
@@ -309,7 +309,7 @@ function SetPreferences() {
           <div className="h-full w-full bg-gradient-to-r from-tkh-bg-1/[.55] to-tkh-bg-1/[.75]"/>
         </div>
       </div>
-      <Footer />
+      {/* <Footer /> the footer has to be added in global main layout  */}
     </div>
   );
 }

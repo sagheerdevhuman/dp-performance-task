@@ -63,7 +63,7 @@ console.log("activeEvents",qualifiedContent)
           <Upcomming events={activeEvents} programs={activePrograms} featuredContent={featuredQualifiedContent}/> 
           <CommunityEvents data={qualifiedContent?.qualified_content} />
           <FeaturedPartners partners={partnersList} />
-            <Footer />
+             {/* <Footer /> the footer has to be added in global main layout  */}
         </div>
       )   
     }
@@ -89,7 +89,7 @@ console.log("activeEvents",qualifiedContent)
          <Upcomming events={activeEvents} programs={activePrograms} featuredContent={featuredQualifiedContent}/> 
         <FeaturedPartners partners={partnersList} />
        
-        <Footer />
+        {/* <Footer /> the footer has to be added in global main layout  */}
       </div>
     );
 }

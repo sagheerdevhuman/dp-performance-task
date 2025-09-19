@@ -65,7 +65,7 @@ export default function InactiveUserPage() {
 
   return (
     <div className="flex flex-col justify-between h-screen">
-      <Navbar />
+      {/* <Navbar /> the Navbar has to be added in global main layout  */}
 
       <div className="flex flex-col justify-center items-center">
         <h1 className="text-align text-3xl">Your Account was Deactivated!!!</h1>
@@ -78,7 +78,7 @@ export default function InactiveUserPage() {
         )}
       </div>
 
-      <Footer />
+      {/* <Footer /> the footer has to be added in global main layout  */}
     </div>
   );
 }
